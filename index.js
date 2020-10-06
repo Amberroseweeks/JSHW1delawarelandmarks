@@ -4,6 +4,20 @@ let cityNames;
 
 let cityNamesList = [];
 
+let buffer = [];
+
+let inputEntryField = document.getElementById("myInput");
+
+let infoCardClass = document.getElementsByClassName("infocard");
+
+
+function keyStrokeSearch() {
+    var inputEntry = document.getElementById("myInput").value;
+    console.log(inputEntry)
+  }
+
+  
+
  function getdelawareCityData(){
     $.ajax({
         url: "https://raw.githubusercontent.com/Amberroseweeks/JSIIIHW1/main/back4appDelawareDataEdited.JSON",
@@ -61,6 +75,60 @@ let cityNamesList = [];
 
     getdelawareCityData();
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    'use strict';
+
+    
+
+    document.addEventListener('keydown', event => {
+        const charList = 'abcdefghijklmnopqrstuvwxyz0123456789';
+        const key = event.key.toLowerCase();
+
+        if (charList.indexOf(key) === -1) return;
+
+        buffer.push(key);
+        console.log(buffer);
+        filterResults();
+    });
+
+    
+
+});
+
+
+function clearArray(){
+    buffer = [];
+}
+
+function filterResults() {
+    filter = inputEntryField.value.toUpperCase();
+    // console.log(infoCardClass);
+
+    for (i = 0; i < cityNamesList.length; i++){
+        a = cityNamesList[i]
+        txtValue = a.textContent || a.innerText;
+
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            // infoCardClass.style.display = "none";
+            console.log("hey, this works!")
+        } else {
+            // infoCardClass.style.display = "none";
+            console.log("hey, this works!x2")
+        }
+    }
+
+    // if (inputEntryField.innerText === cityNamesList){
+    //     console.log("this is working too");
+    // }
+
+}
+
+function filterCityName() {
+    if (inputEntryField.innerText === cityNamesList){
+        console.log("this is working too");
+    }
+}
 
 
 
