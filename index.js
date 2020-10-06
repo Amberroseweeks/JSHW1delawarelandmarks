@@ -105,30 +105,29 @@ function filterResults() {
     filter = inputEntryField.value.toUpperCase();
     // console.log(infoCardClass);
 
-    for (i = 0; i < cityNamesList.length; i++){
-        a = cityNamesList[i]
-        txtValue = a.textContent || a.innerText;
+    for (j = 0; j < cityNamesList.length; j++){
+        a = cityNamesList[j]
 
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            // infoCardClass.style.display = "none";
+        // txtValue = a.textContent || a.innerText;
+        firstLetterCityName = a[0];
+        // console.log(a[0]);
+
+        if (firstLetterCityName.toUpperCase().indexOf(filter) > -1) {
+            inputEntryField.style.display = "none";
             console.log("hey, this works!")
+
         } else {
             // infoCardClass.style.display = "none";
             console.log("hey, this works!x2")
         }
     }
 
-    // if (inputEntryField.innerText === cityNamesList){
-    //     console.log("this is working too");
-    // }
-
 }
 
 function filterCityName() {
-    if (inputEntryField.innerText === cityNamesList){
-        console.log("this is working too");
+   
     }
-}
+
 
 
 
