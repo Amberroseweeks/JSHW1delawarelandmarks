@@ -20,3 +20,18 @@ const populateCities = (cities) => {
   });
 };
 
+
+const filterCities = (event) => {
+  const eventinput = document.getElementById("event");
+  resultsDiv.innerHTML = "";
+    const searchTerm = eventinput.value
+    const filteredCities = cities.filter((city) => {
+      return city.name.toLowerCase().includes(searchTerm);
+    });
+  
+    populateCities(filteredCities);
+  };
+    
+
+populateCities(cities);
+
