@@ -1,3 +1,4 @@
+
 const resultsDiv = document.getElementsByClassName("results")[0];
 
 const cities = [
@@ -8,9 +9,14 @@ const cities = [
     { name: "Philadelphia", population: 1526006, landmark: "Independence Hall" },
   ];
 
-  
-    resultsDiv.innerHTML = formattedCities.join("");
- 
-  
 
+
+
+
+const populateCities = (cities) => {
+  
+  cities.forEach((city) => {
+    resultsDiv.innerHTML += `<div><b>${city.name}</b>, a city with a population of ${city.population}, is famous for the ${city.landmark}.</div>`;
+  });
+};
 
