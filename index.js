@@ -16,7 +16,8 @@ const cities = [
 const populateCities = (cities) => {
   
   cities.forEach((city) => {
-    resultsDiv.innerHTML += `<div><b>${city.name}</b>, a city with a population of ${city.population}, is famous for the ${city.landmark}.</div>`;
+    resultsDiv.innerHTML += `<div class="infoCard"> <span class="cityName"><b>${city.name}</b>, a city with a population of ${city.population}, is famous for the ${city.landmark}.</span></div>`;
+    resultsDiv.classList.add("infocard");
   });
 };
 
